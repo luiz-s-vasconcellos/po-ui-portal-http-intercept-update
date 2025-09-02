@@ -196,7 +196,7 @@ import { PoModule } from '@po-ui/ng-components';
 })
 export class AppModule { }
 `),t()(),o(50,"p"),e(51,"Ao importar o m\xF3dulo "),o(52,"code"),e(53,"PoModule"),t(),e(54," na aplica\xE7\xE3o, o "),o(55,"code"),e(56,"po-http-interceptor"),t(),e(57,` \xE9 automaticamente configurado sem a necessidade
-de qualquer configura\xE7\xE3o extra.`),t(),o(58,"h3"),e(59,"2) Standalone"),t(),o(60,"p"),e(61,"No arquivo contendo a configura\xE7\xE3o da aplica\xE7\xE3o (geralmente "),o(62,"code"),e(63,"src/app/app.config.ts"),t(),e(64,"), importe os providers e configure o "),o(65,"code"),e(66,"HttpClient"),t(),e(67,`,
+de qualquer configura\xE7\xE3o extra.`),t(),o(58,"h3"),e(59,"2) Standalone"),t(),o(60,"p"),e(61,"No arquivo contendo a configura\xE7\xE3o da aplica\xE7\xE3o (geralmente "),o(62,"code"),e(63,"src/app/app.config.ts"),t(),e(64,"), adicione os providers e configure o "),o(65,"code"),e(66,"HttpClient"),t(),e(67,`,
 como no exemplo abaixo:`),t(),o(68,"pre")(69,"code"),e(70,`import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { provideAnimations } from '@angular/platform-browser/animations';
@@ -207,9 +207,9 @@ export const appConfig: ApplicationConfig = {
     ...
     provideAnimations(),
     provideHttpClient(withInterceptorsFromDi()),
-    importProvidersFrom(
+    importProvidersFrom([
       PoHttpInterceptorModule
-    ),
+    ]),
     ...
   ]
 };
